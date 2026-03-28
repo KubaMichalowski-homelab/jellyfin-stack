@@ -1,0 +1,16 @@
+services:
+  jellyfin:
+    image: jellyfin/jellyfin:10.11.6
+    container_name: jellyfin
+    ports:
+      - 8096:8096/tcp
+      - 7359:7359/udp
+    volumes:
+      - /opt/docker/jellyfin/config:/config
+      - /opt/docker/jellyfin/cache:/cache
+      - /opt/docker/jellyfin/series:/series:ro
+      - /opt/docker/jellyfin/movies:/movies:ro
+    restart: unless-stopped
+    # Optional - alternative address used for autodiscovery
+    environment:
+      JELLYFIN_PublishedServerUrl: ${URL}
