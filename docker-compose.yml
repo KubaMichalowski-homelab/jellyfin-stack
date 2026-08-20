@@ -7,8 +7,7 @@ services:
     volumes:
       - /opt/docker/jellyfin/config:/config
       - /opt/docker/jellyfin/cache:/cache
-      - /opt/docker/jellyfin/series:/series:ro
-      - /opt/docker/jellyfin/movies:/movies:ro
+      - /opt/docker/jellyfin/media:/media:ro
     devices:
       - /dev/dri/renderD128:/dev/dri/renderD128
       - /dev/dri/card0:/dev/dri/card0
